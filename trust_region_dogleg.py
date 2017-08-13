@@ -1,6 +1,6 @@
 ###############################################################################
-#                                                                             #
-# Copyright (C) 2017 FUNNYDMAN                                   #
+# trust-region dogleg algorithm                                               #
+# Copyright (C) 2017 FUNNYDMAN                                                #
 #                                                                             #
 #                                                                             #
 # This program is free software: you can redistribute it and/or modify        #
@@ -17,11 +17,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.       #
 #                                                                             #
 ###############################################################################
-
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 import numpy as np
 import numpy.linalg as ln
 import scipy as sp
-import scipy.optimize
 from math import sqrt
 
 
@@ -116,5 +116,3 @@ print("Result of trust region dogleg method:")
 print(result)
 print("Value of function at a point:")
 print(f(result))
-
-
