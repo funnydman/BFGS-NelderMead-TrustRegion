@@ -10,10 +10,9 @@ def f(x):
     return x[0]**3 + 8*x[1]**3 - 6*x[0]*x[1] + 5
 
 # Derivative
-
 def jac(x):
     return np.array([3*x[0]**2 - 6*x[1], 24*x[1]**2 - 6*x[0]])
-
+# Hessian
 def hess(x):
     return np.array([[6*x[0], -6], [-6, 48*x[1]]])
     
