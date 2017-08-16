@@ -1,5 +1,5 @@
 # Python implementation of some numerical (optimization) methods
-#### Repository now consist:
+#### Now repository consist:
 * BFGS algorithm
 * Nelder-Mead algorithm
 * Trust-Region Dogleg algorithm
