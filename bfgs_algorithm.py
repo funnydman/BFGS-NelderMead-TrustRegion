@@ -1,3 +1,9 @@
+
+'''
+    Pure Python/Numpy implementation of the BFGS algorithm.
+    Reference: https://en.wikipedia.org/wiki/Broyden%E2%80%93Fletcher%E2%80%93Goldfarb%E2%80%93Shanno_algorithm
+'''
+
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import numpy as np
@@ -17,6 +23,18 @@ def f1(x):
 
 
 def bfgs_method(f, fprime, x0, maxiter=None, epsi=10e-3):
+    """
+    Minimize a function func using the BFGS algorithm.
+    
+    Parameters
+    ----------
+    func : f(x)
+        Function to minimise.
+    x0 : ndarray
+        Initial guess.
+    fprime : fprime(x)
+        The gradient of `func`.
+    """
     
     if maxiter is None:
         maxiter = len(x0) * 200
@@ -25,6 +43,7 @@ def bfgs_method(f, fprime, x0, maxiter=None, epsi=10e-3):
     k = 0
     gfk = fprime(x0)
     N = len(x0)
+    # Set the Identity matrix I.
     I = np.eye(N, dtype=int)
     Hk = I
     xk = x0
@@ -34,8 +53,10 @@ def bfgs_method(f, fprime, x0, maxiter=None, epsi=10e-3):
         # pk - direction of search
         
         pk = -np.dot(Hk, gfk)
-
-        # Repeating the linesearch
+        
+        # Line search constants for the Wolfe conditions.
+        # Repeating the line search
+        
         # line_search returns not only alpha
         # but only this value is interesting for us
 
@@ -61,9 +82,7 @@ def bfgs_method(f, fprime, x0, maxiter=None, epsi=10e-3):
     return (xk, k)
 
 
-x0 = np.array([1, 1])
-
-result, k = bfgs_method(f, f1, x0)
+result, k = bfgs_method(f, f1, np.array([1, 1]))
 
 print('Result of BFGS method:')
 print('Final Result (best point): %s' % (result))
