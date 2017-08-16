@@ -81,7 +81,7 @@ def dogleg_method(Hk, gk, Bk, trust_radius):
     # Compute the intersection of the trust region boundary
     # and the line segment connecting the Cauchy and Newton points.
     # This requires solving a quadratic equation.
-    # ||p_u + t*(p_best - p_u)||**2 == trust_radius**2
+    # ||p_u + tau*(p_b - p_u)||**2 == trust_radius**2
     # Solve this for positive time t using the quadratic formula.
     pB_pU = pB - pU
     dot_pB_pU = np.dot(pB_pU, pB_pU)
