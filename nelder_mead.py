@@ -33,17 +33,16 @@ class Vector(object):
         return (self.x, self.y)
         
 
-
 def f(point):
     x, y = point
     return x**2 + x*y + y**2 - 6*x - 9*y
 
-def nelder_mead(alpha=1, beta=0.5, gamma=2):
+def nelder_mead(alpha=1, beta=0.5, gamma=2, maxiter=10):
     v1 = Vector(0, 0)
     v2 = Vector(1.0, 0)
     v3 = Vector(0, 1)
 
-    for i in range(10):
+    for i in range(maxiter):
         adict = {v1:f(v1.c()), v2:f(v2.c()), v3:f(v3.c())}
         points = sorted(adict.items(), key=lambda x: x[1])
         b = points[0][0]
@@ -73,6 +72,8 @@ def nelder_mead(alpha=1, beta=0.5, gamma=2):
         v1 = w
         v2 = g
         v3 = b
-    print(b)
-        
-nelder_mead()
+    return b
+
+print("Result of Nelder-Mead algorithm: ")
+xk = nelder_mead()
+print("Best poits is: %s"%(xk))
