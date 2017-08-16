@@ -15,7 +15,7 @@ from math import sqrt
 def f(x):
     return x[0]**3 + 8*x[1]**3 - 6*x[0]*x[1] + 5
 
-# Derivative
+# Gradient
 def jac(x):
     return np.array([3*x[0]**2 - 6*x[1], 24*x[1]**2 - 6*x[0]])
 
