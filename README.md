@@ -6,6 +6,6 @@
 
 
 ### Description (Russian)
-BFGS https://habr.com/ru/post/333356/
-Nelder-Mead https://habr.com/ru/post/332092/
-Trust-Region https://habr.com/ru/post/335224/
+* BFGS https://habr.com/ru/post/333356/
+* Nelder-Mead https://habr.com/ru/post/332092/
+* Trust-Region https://habr.com/ru/post/335224/
