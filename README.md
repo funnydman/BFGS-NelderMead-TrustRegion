@@ -1,4 +1,6 @@
 # Python implementation of some numerical (optimization) methods
+> ⭐️ Thanks everyone who has starred the project, it means a lot!
+
 #### Now repository consist:
 * BFGS algorithm
 * Nelder-Mead algorithm
